@@ -13,7 +13,6 @@ echo 'MDL_1           for Moodle_1'
 echo 'MSJS_1          for Multiscroll_1'
 echo 'RCM_1           for Roundcubemail_1'
 echo 'TBLT_1          for Tabulator_1'
-#echo 'QZ_1            for Quizzy_1'
 
 #Mozilla
 echo 'MZ_AWSY_1       for Mozilla_Areweslimyet_1'
