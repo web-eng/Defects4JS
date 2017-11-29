@@ -35,27 +35,22 @@ read anApp
 case $anApp in
     
     FP_1)                           echo 'Flatpickr'
-                                    echo '<Ctrl + P> and <Ctrl + Q>'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:flatpickr_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:flatpickr_defect1
                                     ;;
     HOT_1)                          echo 'Handsontable'
-                                    echo '<Ctrl + P> and <Ctrl + Q>'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:handsontable_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:handsontable_defect1
                                     ;;
     JQUI_1)                         echo 'Jqueryui'
-                                    echo '<Ctrl + P> and <Ctrl + Q>'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:jqueryui_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:jqueryui_defect1
                                     ;;
     LSJ_1)                          echo 'Lazyjs'
-                                    echo '<Ctrl + P> and <Ctrl + Q>'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:lazy_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:lazy_defect1
                                     ;;
     LL_1)                           echo 'Leaflet'
-                                    echo '<Ctrl + P> and <Ctrl + Q>'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:leaflet_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:leaflet_defect1
                                     ;;
     MT_1)                           echo 'Material'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:material_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:material_defect1
                                     ;;
     MDL_1)                          echo 'Moodle'
                                     echo 'In the docker container terminal， please type in the following command:'
@@ -64,7 +59,7 @@ case $anApp in
                                     docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:moodle_defect1
                                     ;;
     MSJS_1)                         echo 'Multiscroll'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:multiscroll_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:multiscroll_defect1
                                     ;;
     RCM_1)                          echo 'Roundcubemail'
                                     echo 'In the docker container terminal， please type in the following command:'
@@ -73,17 +68,15 @@ case $anApp in
                                     docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:roundcubemail_defect1 /bin/bash
                                     ;;
     TBLT_1)                         echo 'Tabulator'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:tabulator_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:tabulator_defect1
                                     ;;
-  # Quizzy)                         echo 'Quizzy'
-    #                               java -Xms6400m -cp 'target/classes:target/test-classes:target/dependency/*' jp.mzw.defects4js.CLI test-each jp.mzw.revajaxmutator.test.quizzy.QuizzyConfig jp.mzw.revajaxmutator.test.quizzy.QuizzyTest
-    #                               ;;
+
 #Mozilla
     MZ_AWSY_1)                      echo 'Areweslimyet'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:areweslimyet_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:areweslimyet_defect1
                                     ;;
     MZ_MLD_1)                       echo 'Mortarlistdetail'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:mortar_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:mortar_defect1
                                     ;;
 #WikiMedia
     WM_TMH_1)                       echo 'WikiMidia_TimedMediaHandler_1'
@@ -93,7 +86,7 @@ case $anApp in
                                     docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:mediawiki_defect1
                                     ;;
     WM_WH_1)                        echo 'WikiMedia_WikiHiero_1'
-                                    docker run -i -p 28081:80 -m 2g --name ram-test -t c314/defects4js:wikimedia_wikihiero_defect1
+                                    docker run -i -d -p 28081:80 -m 2g --name ram-test -t c314/defects4js:wikimedia_wikihiero_defect1
                                     ;;
 # WordPress
     WP_GP_1)                        echo 'WP_GalleriaPress'
