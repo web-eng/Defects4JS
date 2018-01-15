@@ -1,21 +1,61 @@
-# This is README for Defects4JS
+Defects4JS
+-------------------
+Defects4JS is a collection of existing bugs of Ajax Web applications with the goal of JavaScript web application testing research. Each web application and its corresponding test case are built in two Docker containers so they should depend on Docker environments. 
 
-Please copy all these shell scripts to the ram-test-cases folder.
 
-1. Pull the docker images form DockerHub
+
+
+The WEB applications
+---------------
+Defects4Js currently contains 20 bugs from the following web applications:
+
 ```
-$sh pull-docker.sh
+Account        Application    
+
+chmln          flatpickr   
+handsontable   handsontable   
+jquery         jqueryui    
+dtao           lazy.js             
+leaflet        leaflet                          
+angular        material             
+moodle         moodle       
+alvarotrigo    multiscroll.js      
+roundcube      roundcubemail        
+olifolkerd     tabulator           
+        
+mozilla        areweslimyet         
+mozilla        mortar-list-detail  
+
+wikimedia      TimedMediaHandler 
+wikimedia      wikihiero
+
+wp-plugins     galleria-press
+               grand-media 
+               hero-maps-pro
+               in-over-your-archives
+               press-this
+               themes-plus 
 ```
 
-2. Run the docker images and launch the application based on the instruction.
-```
-$sh run-docker.sh
-```
-3. Run the test cases
+Requirements
+-----------------
+ - Docker >= 17.09
+ 
+
+
+
+
+
+ 
+Steps:
+
+
+
+1. Run the test cases
 ```
 $sh run-tests.sh
 ```
-4. Change the version of the application
+2. Change the version of the application
 ```
 $sh ch-correct.sh
 ```
@@ -23,11 +63,11 @@ Or
 ```
 $sh ch-faullty.sh
 ```
-5. Run the test cases again for another version
+3. Run the test cases again for another version
 ```
 $sh run-tests.sh
 ```
-6. Remove the docker container
+4. Remove all docker containers
 ```
 $sh rm-docker.sh
 ```
