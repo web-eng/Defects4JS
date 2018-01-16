@@ -1,4 +1,4 @@
 #! /bin/bash
 
-docker rm -f ram-test
-echo 'You have removed the docker container.'
+docker rm -f ram-test ram
+echo 'You have removed the docker containers.'
