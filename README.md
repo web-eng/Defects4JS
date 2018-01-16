@@ -50,11 +50,11 @@ git clone https://github.com/web-eng/Defects4JS
 ```
 2. Create Defects4JS network in Docker environments
 ```bash
+cd Defects4JS
 sh network.sh
 ```
 #### Run Defects4JS (choose application, and pull and run its Docker image):
 ```bash
-cd Defects4JS
 sh RUNME.sh
 ```
 #### In the test-case Docker container   
