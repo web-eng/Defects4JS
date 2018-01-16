@@ -1,6 +1,6 @@
 Defects4JS
 -------------------
-Defects4JS is a collection of existing bugs of Ajax Web applications with the goal of JavaScript web application testing research. Each web application and its corresponding test case are built in two Docker containers so they should depend on Docker environments. 
+Defects4JS is a collection of existing bugs of Ajax web applications with the goal of JavaScript web application testing research. Each web application and its corresponding test case are built in two Docker containers so they should depend on Docker environments. 
 
 
 
