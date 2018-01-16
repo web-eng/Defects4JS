@@ -41,33 +41,44 @@ Requirements
 -----------------
  - Docker >= 17.09
  
-
-
-
-
-
- 
-Steps:
---------------
-
-
-1. Run the test cases
+Getting started
+-----------------
+#### Setting up Defects4JS
+1. Clone Defects4JS:
+```bash
+git clone https://github.com/web-eng/Defects4JS
 ```
-$sh run-tests.sh
+2. Create Defects4JS network in Docker environments
+```bash
+sh network.sh
 ```
-2. Change the version of the application
+#### Run Defects4JS (choose application, and pull and run its Docker image):
+```bash
+cd Defects4JS
+sh RUNME.sh
 ```
-$sh ch-correct.sh
+#### In the test-case Docker container   
+1. Set up Defects4JS    
+```bash
+root@c12abc45d67:/# source setup.sh
+```
+2. Run the test cases
+```bash
+root@c12abc45d67:/workspace# sh run-tests.sh
+```
+3. Change the version of the application
+```bash
+root@c12abc45d67:/workspace# sh ch-correct.sh
 ```
 Or
+```bash
+root@c12abc45d67:/workspace# sh ch-faullty.sh
 ```
-$sh ch-faullty.sh
+4. Run the test cases again for another version
+```bash
+root@c12abc45d67:/workspace# sh run-tests.sh
 ```
-3. Run the test cases again for another version
-```
-$sh run-tests.sh
-```
-4. Remove all docker containers
-```
-$sh rm-docker.sh
+5. Remove all docker containers
+```bash
+root@c12abc45d67:/workspace# sh rm-docker.sh
 ```
