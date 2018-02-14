@@ -103,7 +103,7 @@ RCM_1           for Roundcubemail_1
 TBLT_1          for Tabulator_1
 MZ_AWSY_1       for Mozilla_Areweslimyet_1
 MZ_MLD_1        for Mozilla_Mortarlistdetail_1
-WM_TMH_1        for WikiMidia_TimedMediaHandler_1
+WM_TMH_1        for WikiMedia_TimedMediaHandler_1
 WM_WH_1         for WikiMedia_WikiHiero_1
 WP_GP_1         for WP_GalleriaPress_1
 WP_GM_1         for WP_GrandMedia_1
