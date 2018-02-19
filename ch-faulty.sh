@@ -1,3 +1,3 @@
 #! /bin/bash
 
-docker exec -it ram sh /workspace/ch-faulty.sh
+docker exec -itd ram sh /workspace/ch-faulty.sh
