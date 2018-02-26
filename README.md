@@ -128,15 +128,20 @@ sh network.sh
 ```bash
 sh plus.sh XXX   // XXX represents the application
 ```
-2. Change to the faulty version
+2. Run test cases
+```bash
+sh run-tests.sh
+```
+3. Change to the faulty version
 ```bash
 sh ch-faulty.sh
 ```
-3. Change to the correct version
+4. Change to the correct version
 ```bash
 sh ch-correct.sh
 ```
-4. Remove all docker containers
+
+5. Remove all docker containers
 ```bash
 sh rm-docker.sh
 ```
