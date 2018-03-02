@@ -3,6 +3,7 @@ echo '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 echo 'Defects4JS.'
 echo '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 
+
 App=$1
 
 case $App in
@@ -19,8 +20,8 @@ case $App in
     LSJ_1)                          echo 'Lazyjs'
                                     docker run -itd --net defects4js --ip 172.88.0.7 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:lzay_defect1
                                     ;;
-    LL_1)                           echo 'Leaflet'
-                                    docker run -itd --net defects4js --ip 172.88.0.8 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:leaflet_defect1  
+    LL_1)                           echo 'Leaflet is not avalible now'
+#                                    docker run -itd --net defects4js --ip 172.88.0.8 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:leaflet_defect1  
                                     ;;
     MT_1)                           echo 'Material'
                                     docker run -itd --net defects4js --ip 172.88.0.9 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:material_defect1  
@@ -34,8 +35,8 @@ case $App in
     RCM_1)                          echo 'Roundcubemail'
                                     docker run -itd --net defects4js --ip 172.88.0.12 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:roundcubemail_defect1  
                                     ;;
-    TBLT_1)                         echo 'Tabulator'
-                                    docker run -itd --net defects4js --ip 172.88.0.13 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:tabulator_defect1  
+    TBLT_1)                         echo 'Tabulator is not avalible now'
+#                                    docker run -itd --net defects4js --ip 172.88.0.13 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:tabulator_defect1  
                                     ;;
 
 #Mozilla
@@ -45,19 +46,19 @@ case $App in
     MZ_MLD_1)                       echo 'Mortarlistdetail'
                                     docker run -itd --net defects4js --ip 172.88.0.15 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:mozilla_mortarlistdetail_defect1  
                                     ;;
-# #WikiMedia
-#     WM_TMH_1)                       echo 'WikiMidia_TimedMediaHandler_1'
-#                                     docker run -itd --net defects4js --ip 172.88.0.16 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:mediawiki28081_defect1  
-#                                     ;;
-#     WM_WH_1)                        echo 'WikiMedia_WikiHiero_1'
-#                                     docker run -itd --net defects4js --ip 172.88.0.17 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:wikimedia_wikihiero_defect1  
-#                                     ;;
-# WordPress
+#WikiMedia
+    WM_TMH_1)                       echo 'WikiMidia_TimedMediaHandler is not avalible now'
+#                                    docker run -itd --net defects4js --ip 172.88.0.16 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:mediawiki28081_defect1  
+                                    ;;
+    WM_WH_1)                        echo 'WikiMedia_WikiHiero is not avalible now'
+#                                    docker run -itd --net defects4js --ip 172.88.0.17 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:wikimedia_wikihiero_defect1  
+                                    ;;
+#WordPress
     WP_GP_1)                        echo 'WP_GalleriaPress'
                                     docker run -itd --net defects4js --ip 172.88.0.18 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:wordpressPlugins_galleriaPress28083_defect1  
                                     ;;
     WP_GM_1)                        echo 'WP_GrandMedia'
-                                    docker run -itd --net defects4js --ip 172.88.0.19 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:wordpressPlugins_grandMedia28085_defect1  
+                                    docker run -itd --net defects4js --ip 172.88.0.19 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:wordpreshs_grandMedia28085_defect1  
                                     ;;
     WP_HMP_1)                       echo 'WP_HeroMapsPro'
                                     docker run -itd --net defects4js --ip 172.88.0.20 --name ram -v /var/run/docker.sock:/var/run/docker.sock  defects4js/defects4js-testcases:wordpressPlugins_heroMapsPro28084_defect1  
@@ -75,9 +76,27 @@ case $App in
     *)  echo 'Error! Please insert the correct abbreviation of the application.'
 
 esac
+
 docker exec -d ram Xvfb :99 -ac -screen 0 1280x1024x24 &
 sleep 3
 docker exec -itd ram sh setup.sh
-sleep 3
+sleep 5
+
+if [ "$1" = "WP_GP_1" -o "$1" = "WP_GM_1" -o "$1" = "WP_HMP_1" -o "$1" = "WP_IOYA_1" -o "$1" = "WP_PT_1" -o "$1" = "WP_TP_1" ] 
+then
+    docker exec -itd ram-test /bin/bash service apache2 start
+    docker exec -itd ram-test /bin/bash mysqld_safe &
+elif [ "$1" = "RCM_1" ]
+then
+    docker exec -it ram-test /bin/bash service postfix start
+    docker exec -it ram-test /bin/bash service mysql start
+    docker exec -it ram-test /bin/bash service dovecot start &
+    docker exec -it ram-test /bin/bash service apache2 start
+elif [ "$1" = "MDL_1" ]
+then
+    docker exec -it ram-test /bin/bash service apache2 start
+    docker exec -it ram-test /bin/bash service mysql start
+fi
+
 
 echo '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
